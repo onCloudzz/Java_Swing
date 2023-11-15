@@ -17,8 +17,11 @@ public class Start extends JFrame {
 
         // Top panel
         JPanel topPanel = new JPanel(new BorderLayout());
-        topPanel.add(characterPanel, BorderLayout.WEST);
-        topPanel.add(statusBars, BorderLayout.CENTER);
+        JPanel topLeftPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
+        topLeftPanel.add(characterPanel);
+        topLeftPanel.add(statusBars);
+
+        topPanel.add(topLeftPanel, BorderLayout.WEST);
         topPanel.add(mapPanel, BorderLayout.EAST);
         c.add(topPanel, BorderLayout.NORTH);
 

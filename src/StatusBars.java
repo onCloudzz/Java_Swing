@@ -6,7 +6,7 @@ public class StatusBars extends JPanel {
     public StatusBars() {
         setLayout(new GridLayout(3, 1, 0, 5));
 
-        String[] statusBarData = {"Health", "Stamina", "Thirst"};
+        String[] statusBarData = {"Health ???/100", "Stamina ???/100", "Thirst ???/100"};
         Color[] statusBarColors = {new Color(150, 0, 0), new Color(150, 150, 0), new Color(0, 0, 150)};
 
         for (int i = 0; i < statusBarData.length; i++) {
@@ -14,6 +14,7 @@ public class StatusBars extends JPanel {
             statusBar.setString(statusBarData[i]);
             statusBar.setBackground(statusBarColors[i]);
             statusBar.setStringPainted(true);
+            statusBar.setValue(50);
             add(statusBar);
         }
 
