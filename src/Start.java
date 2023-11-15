@@ -3,7 +3,7 @@ import javax.swing.*;
 
 public class Start extends JFrame {
     public Start() {
-        setTitle("Main Frame");
+        setTitle("Project_Underworld");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(1600, 900);
 
@@ -25,10 +25,7 @@ public class Start extends JFrame {
         topPanel.add(mapPanel, BorderLayout.EAST);
         c.add(topPanel, BorderLayout.NORTH);
 
-
-        JPanel bottomPanel = new JPanel();
-        bottomPanel.add(weaponAndInventoryPanel);
-        c.add(bottomPanel, BorderLayout.SOUTH);
+        c.add(weaponAndInventoryPanel, BorderLayout.SOUTH);
 
         setVisible(true);
     }
