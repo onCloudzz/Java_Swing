@@ -1,0 +1,10 @@
+{
+    "RoomID": 1,
+    "Background": "bg_I1.jpg",
+    "Event" : false,
+    "ItemsCount" : 2,
+    "Item" :[
+        "001",
+        "003"
+    ]
+}

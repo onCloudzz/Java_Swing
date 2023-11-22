@@ -1,0 +1,17 @@
+{
+    "RoomID" : 303,
+    "Background" : "bg_R1.jpg",
+    "RoomType" : "Elete",
+    "ZombieCount" : 3,
+    "Zombie" : [
+        8,
+        6,
+        7
+    ],
+    "ItemCount" : 3,
+    "Item" : [
+        1,
+        2,
+        3
+    ]
+}
