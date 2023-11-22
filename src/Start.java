@@ -1,25 +1,38 @@
 import java.awt.*;
-import java.awt.event.*;
 import javax.swing.*;
-import javax.swing.event.*;
-import java.util.*;
-import java.io.*;
 
 public class Start extends JFrame {
-
-
     public Start() {
-
-        setTitle("MainUI");
+        setTitle("Project_Underworld");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setSize(1600, 900);
+
+        StatusBars statusBars = new StatusBars();
+        CharacterPanel characterPanel = new CharacterPanel();
+        MapPanel mapPanel = new MapPanel();
+        WeaponAndInventoryPanel weaponAndInventoryPanel = new WeaponAndInventoryPanel();
 
         Container c = getContentPane();
+        c.setLayout(new BorderLayout());
 
-        setSize(1600, 900);
+        // Top panel
+        JPanel topPanel = new JPanel(new BorderLayout());
+        JPanel topLeftPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
+        topLeftPanel.add(characterPanel);
+        topLeftPanel.add(statusBars);
+
+        topPanel.add(topLeftPanel, BorderLayout.WEST);
+        topPanel.add(mapPanel, BorderLayout.EAST);
+        c.add(topPanel, BorderLayout.NORTH);
+
+        c.add(weaponAndInventoryPanel, BorderLayout.SOUTH);
+
         setVisible(true);
     }
 
     public static void main(String[] args) {
-        new Start();
+        SwingUtilities.invokeLater(() -> {
+            new Start();
+        });
     }
 }
