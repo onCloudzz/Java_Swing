@@ -1,5 +1,6 @@
 import java.awt.*;
 import javax.swing.*;
+import JSON.*;
 
 public class Start extends JFrame {
     public Start() {
@@ -27,6 +28,19 @@ public class Start extends JFrame {
 
         c.add(weaponAndInventoryPanel, BorderLayout.SOUTH);
 
+        //JSON Test
+        //ItemRoomJson을 사용해 Room_Item의 정보 출력
+        ItemRoomJson itemRoomJson = new ItemRoomJson();
+        itemRoomJson.setInfo();
+        System.out.println("RoomID : " + itemRoomJson.getRoomID());
+        System.out.println("Background : " + itemRoomJson.getBackground());
+        System.out.println("Event : " + itemRoomJson.getEvent());
+        System.out.println("ItemsCount : " + itemRoomJson.getItemsCount());
+        System.out.print("Item : ");
+        for(int i = 0; i<itemRoomJson.getItemsCount();i++){
+            System.out.print(itemRoomJson.getItem()[i] + " ");
+        }
+        System.out.println();
         setVisible(true);
     }
 

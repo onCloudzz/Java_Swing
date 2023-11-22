@@ -4,7 +4,7 @@
     "Event" : false,
     "ItemsCount" : 2,
     "Item" :[
-        "001",
-        "003"
+        1,
+        3
     ]
 }
