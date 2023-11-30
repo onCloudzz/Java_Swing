@@ -1,0 +1,8 @@
+{
+    "RoomID" : 303,
+    "Background" : "bg_I1.jpg",
+    "ZombieCount" : 3,
+    "ZombieQuality" : 6,
+    "Event" : true,
+    "ItemsCount" : 3
+}
