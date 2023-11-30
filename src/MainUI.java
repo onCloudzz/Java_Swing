@@ -12,6 +12,12 @@ public class MainUI extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         Container c = getContentPane();
 
+<<<<<<< Updated upstream
+=======
+        JPanel
+
+
+>>>>>>> Stashed changes
         setSize(1600, 900);
         setVisible(true);
     }
