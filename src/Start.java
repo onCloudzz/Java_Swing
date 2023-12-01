@@ -1,5 +1,6 @@
 import java.awt.*;
 import javax.swing.*;
+import JSON.*;
 
 public class Start extends JFrame {
     public Start() {
@@ -23,9 +24,9 @@ public class Start extends JFrame {
 
         topPanel.add(topLeftPanel, BorderLayout.WEST);
         topPanel.add(mapPanel, BorderLayout.EAST);
-        c.add(topPanel, BorderLayout.NORTH);
-
+  
         c.add(weaponAndInventoryPanel, BorderLayout.SOUTH);
+
 
         setVisible(true);
     }
@@ -33,6 +34,8 @@ public class Start extends JFrame {
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
             new Start();
+            Map map = new Map();
+            map.createMap(1,123);
         });
     }
 }
