@@ -5,30 +5,20 @@ import org.json.simple.JSONObject;
 /*
 {
     "RoomID" : 303,
-    "Background" : "bg_R1.jpg",
-    "RoomType" : "Elete",
+    "Background" : "bg_I1.jpg",
     "ZombieCount" : 3,
-    "Zombie" : [
-        8,
-        6,
-        7
-    ],
-    "ItemCount" : 3,
-    "Item" : [
-        1,
-        2,
-        3
-    ]
+    "ZombieQuality" : 6,
+    "Event" : true,
+    "ItemsCount" : 3
 }
  */
 public class ZombieRoomJson {
     int RoomID;
     String Background;
-    String RoomType;
     int ZombieCount;
-    int[] Zombie;
+    int ZombieQuality;
+    int Event;
     int ItemCount;
-    int[] Item;
 
     public int getRoomID() {
         return RoomID;
@@ -36,39 +26,25 @@ public class ZombieRoomJson {
     public String getBackground() {
         return Background;
     }
-    public String getRoomType() {
-        return RoomType;
-    }
     public int getZombieCount() {
         return ZombieCount;
     }
-    public int[] getZombie() {
-        return Zombie;
-    }
+    public int getZombieQuality() {return ZombieQuality;}
     public int getItemCount() {
         return ItemCount;
     }
-    public int[] getItem() {
-        return Item;
+    public int getEvent() {
+        return Event;
     }
 
-    public void setInfo(){
+    public void setInfo(int roomID){
         LoadJSON loadJSON = new LoadJSON();
-        JSONObject zombieRoom = loadJSON.JsonLoad("Resource/JSON/Room_Zombie.json");
+        JSONObject zombieRoom = loadJSON.JsonLoad("Resource/JSON/" + roomID +".json");
         RoomID = Integer.parseInt(zombieRoom.get("RoomID").toString());
         Background = zombieRoom.get("Background").toString();
-        RoomType = zombieRoom.get("RoomType").toString();
+        ZombieQuality = Integer.parseInt(zombieRoom.get("ZombieQuality").toString());
         ZombieCount = Integer.parseInt(zombieRoom.get("ZombieCount").toString());
-        JSONArray zombies = (JSONArray) zombieRoom.get("Zombie");
-        Zombie = new int[ZombieCount];
-        for(int i = 0; i<ZombieCount;i++){
-            Zombie[i] = Integer.parseInt(zombies.get(i).toString());
-        }
+        Event = Integer.parseInt(zombieRoom.get("Event").toString());
         ItemCount = Integer.parseInt(zombieRoom.get("ItemCount").toString());
-        JSONArray items = (JSONArray) zombieRoom.get("Item");
-        Item = new int[ItemCount];
-        for(int i = 0; i<ItemCount;i++){
-            Item[i] = Integer.parseInt(items.get(i).toString());
-        }
     }
 }

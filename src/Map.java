@@ -17,9 +17,9 @@ public class Map {
 
 
     public void createMap(int difficulty, int seed){
-        Map = new int[100][5];
+        Map = new int[100][3];
         for(int i= 0;i<100;i++){
-            for(int j= 0; j<5;j++){
+            for(int j= 0; j<3;j++){
                 Map[i][j]=0;
             }
         }
@@ -63,104 +63,78 @@ public class Map {
     public int[][] setZombieeasy(int[][] Map, int seed){
         Random rand = new Random(seed);
 //        1. 시작 방 생성
-        Map[0][rand.nextInt(5)] = -1;
-//        2. 각 층별로 계단방 위치 선정
+        Map[0][0] = -1;
+
+//        2. 각 층별로 좀비방 1~3개 개수 결정
+        int[] zombie = new int[99];
         for(int i = 0; i< 99; i++){
-            int num = rand.nextInt(5);
-            Map[i][num] = 2;
-            if(Map[i][num]==-1){
-                i--;
+            zombie[i] = rand.nextInt(7);
+        }
+        for(int i = 0; i< 99; i++){
+            switch (zombie[i]){
+                case 4:
+                case 5:
+                case 6:
+                    zombie[i] = 2;
+                    break;
+                case 1:
+                case 2:
+                case 3:
+                    zombie[i] = 1;
+                    break;
+                default:
+                    zombie[i] = 0;
+                    break;
             }
         }
-//        3. 각 층별로 좀비방 1~3개 개수 결정
-        int[] zombie = new int[100];
-        for(int i = 0; i< 100; i++){
-            zombie[i] = rand.nextInt(3)+1;
-        }
 
-//        4. 각 층 별 5개의 방중 zombie[i]개의 중복되지 않은 좀비방 위치 선정 이때 계단방과 시작방은 제외
-        int[][] realzombie = new int[100][];
-        for(int i = 0; i< 100; i++) {
+//        4. 각 층 별 3개의 방중 zombie[i]개의 중복되지 않은 좀비방 위치 선정
+        int[][] realzombie = new int[99][];
+        for(int i = 0; i< 99; i++) {
             realzombie[i] = new int[zombie[i]];
         }
 
-        for(int i = 0; i< 100; i++){
-            for(int j = 0; j<zombie[i];j++){
-                int num = rand.nextInt(5);
-                if(Map[i][num]!=0){
-                    j--;
+        for(int i = 0; i< 99; i++){
+            for(int j = 0; j<realzombie[i].length;j++){
+                int num = rand.nextInt(3);
+                if(j==1) {
+                    if (realzombie[i][0] == num) {
+                        j--;
+                    }
                 }else{
                     realzombie[i][j] = num;
                 }
             }
         }
 
-
         //4-1. realzombie에 저장된 좀비방 위치를 Map에 저장
-        for(int i = 0; i< 100; i++){
-            for(int j = 0; j<zombie[i];j++) {
-                if (i < 20) {
-                    Map[i][realzombie[i][j]] = 1000 + rand.nextInt(100);
-                }else if(i<40){
-                    Map[i][realzombie[i][j]] = 1100 + rand.nextInt(100);
-                }else if(i<60){
-                    Map[i][realzombie[i][j]] = 1200 + rand.nextInt(100);
-                }else if(i<80){
-                    Map[i][realzombie[i][j]] = 1300 + rand.nextInt(100);
-                }else{
-                    Map[i][realzombie[i][j]] = 1400 + rand.nextInt(100);
-                }
-            }
-        }
-//        5. 3층부터 5층 단위로 좀비방이 아닌 곳에 스토리 방 1곳 선정
-        int[] story = {2, 7, 12, 17, 22, 27, 32, 37, 42, 47, 52, 57, 62, 67, 72, 77, 82, 87, 92, 97};
-        int cnt = 0;
-        for(int i = 0; i < story.length;i++){
-            int num = rand.nextInt(5);
-            if(Map[story[i]][num]==0) {
-                Map[story[i]][num] = 2000 + cnt;
-                cnt++;
-            }else{
-                i--;
+        for(int i = 0; i< 99; i++){
+            for(int j = 0; j<realzombie[i].length;j++) {
+                Map[i+1][realzombie[i][j]] = 3;
+                if(realzombie[i][j] == 1)
+                    Map[i+1][realzombie[i][j]] = 6;
             }
         }
 
-        //6. 49층과 99층에 좀비방이 아닌 곳에 보스방 설정
-        cnt = 0;
-        do {
-            int num = rand.nextInt(5);
-            if (Map[48][num] == 0) {
-                Map[48][num] = 7000 + rand.nextInt(5);
-                cnt++;
-            }
-        }while (cnt!=1);
-        do {
-            int num = rand.nextInt(5);
-            if (Map[48][num] == 0) {
-                Map[48][num] = 7005 + rand.nextInt(5);
-                cnt++;
-            }
-        }while (cnt!=2);
-//      6-1. 마지막 층에 백신 방 배치
-        do {
-            int num = rand.nextInt(5);
-            if (Map[99][num] == 0) {
-                Map[99][num] = 10000;
-                cnt++;
-            }
-        }while (cnt!=3);
-
-//        7. 재료방 설정
-        for(int i = 0; i<100;i++){
-            for(int j = 0; j<5;j++){
+        for(int i = 0; i< 100 ; i++){
+            for(int j = 0; j<3;j++){
                 if(Map[i][j]==0){
-                    Map[i][j] = 3000 + rand.nextInt(500);
+                    Map[i][j] = 1000 + rand.nextInt(100);
+                }
+                if(j == 1){
+                    Map[i][j] = 2000 + rand.nextInt(100);
+                    if(Map[i][j]==6){
+                        Map[i][j] = 3000 + rand.nextInt(100);
+                    }
+                }
+                if(Map[i][j]==3){
+                    Map[i][j] = 4000 + rand.nextInt(100);
                 }
             }
         }
         //견본 맵 출력
         for(int i = 0; i<100;i++){
-            for(int j = 0; j<5;j++){
+            for(int j = 0; j<3;j++){
                 System.out.print(Map[i][j] + " ");
             }
             System.out.println();
