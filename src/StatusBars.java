@@ -19,6 +19,7 @@ public class StatusBars extends JPanel {
 
             // Set the preferred width for each progress bar
             statusBar.setPreferredSize(new Dimension(widths[i], 15));
+            statusBar.setVisible(true);
 
             // Add vertical spacing between bars
             if (i > 0) {

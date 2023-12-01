@@ -34,8 +34,6 @@ public class Start extends JFrame {
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
             new Start();
-            Map map = new Map();
-            map.createMap(1,123);
         });
     }
 }
