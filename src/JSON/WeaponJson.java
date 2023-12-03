@@ -45,6 +45,8 @@ public class WeaponJson
     {
         LoadJSON loadJSON = new LoadJSON();
         JSONObject weapon = loadJSON.JsonLoad("src/Resource/json/" + weaponID + ".json");
+        if(weapon == null)
+            weapon = loadJSON.JsonLoad("Resource/json/" + weaponID + ".json");
         this.weaponID = Integer.parseInt(weapon.get("WeaponID").toString());
         weaponName = weapon.get("WeaponName").toString();
         damage = Integer.parseInt(weapon.get("damage").toString());

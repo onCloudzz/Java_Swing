@@ -42,17 +42,25 @@ public class FoodJson {
         public void setInfo(int foodID) {
             LoadJSON loadJSON = new LoadJSON();
             org.json.simple.JSONObject food = loadJSON.JsonLoad("src/Resource/json/" + foodID + ".json");
+            if(food == null)
+                food = loadJSON.JsonLoad("Resource/json/" + foodID + ".json");
             this.foodID = Integer.parseInt(food.get("FoodID").toString());
             foodName = food.get("FoodName").toString();
             foodType = food.get("FoodType").toString();
             if(foodType.equals("hungry")) {
                 hungry = Integer.parseInt(food.get("hungry").toString());
+                if(food.get("hungry").toString() == null)
+                    hungry = 0;
             }
             else if(foodType.equals("heal")) {
                 heal = Integer.parseInt(food.get("heal").toString());
+                if(food.get("heal").toString() == null)
+                    heal = 0;
             }
             else if(foodType.equals("thirst")) {
                 thirst = Integer.parseInt(food.get("thirst").toString());
+                if(food.get("thirst").toString() == null)
+                    thirst = 0;
             }
 
         }

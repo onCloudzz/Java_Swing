@@ -56,6 +56,8 @@ public class ZombieJson {
     public void setInfo(int zombieID){
         LoadJSON loadJSON = new LoadJSON();
         org.json.simple.JSONObject zombie = loadJSON.JsonLoad("src/Resource/json/" + zombieID +".json");
+        if(zombie == null)
+            zombie = loadJSON.JsonLoad("Resource/json/" + zombieID +".json");
         ZombieID = Integer.parseInt(zombie.get("ZombieID").toString());
         ZombieName = zombie.get("ZombieName").toString();
         ZombieImg = zombie.get("ZombieImg").toString();

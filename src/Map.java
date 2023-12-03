@@ -137,7 +137,7 @@ public class Map {
                     }
                 }
                 if(Map[i][j]==6){
-                    Map[i][j] = 3000 + rand.nextInt(100);
+                    Map[i][j] = 2000 + rand.nextInt(100);
                 }
                 if(Map[i][j]==3){
                     Map[i][j] = 4000 + rand.nextInt(100);

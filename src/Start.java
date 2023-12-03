@@ -133,14 +133,7 @@ public class Start extends JFrame {
                         //bgim resize
                         bgimg = new ImageIcon(bgimg.getImage().getScaledInstance(1600, 900, Image.SCALE_SMOOTH));
                         bgPanel.repaint();
-                        if(returnRoomID(mainStat.getFloor(),mainStat.getRoom())/1000==4||returnRoomID(mainStat.getFloor(),mainStat.getRoom())/1000==3){
-//                            mainStat.battleUI.setVisible(true);
-//                            moveUP.setVisible(false);
-//                            moveDOWN.setVisible(false);
-//                            moveLEFT.setVisible(false);
-//                            moveRIGHT.setVisible(false);
-
-                        }else if(returnRoomID(mainStat.getFloor(),mainStat.getRoom())/1000==1||returnRoomID(mainStat.getFloor(),mainStat.getRoom())/1000==3) {
+                        if(returnRoomID(mainStat.getFloor(),mainStat.getRoom())/1000==1) {
                             moveUP.setVisible(false);
                             moveDOWN.setVisible(false);
                             moveLEFT.setVisible(false);
@@ -202,14 +195,7 @@ public class Start extends JFrame {
                         //bgim resize
                         bgimg = new ImageIcon(bgimg.getImage().getScaledInstance(1600, 900, Image.SCALE_SMOOTH));
                         bgPanel.repaint();
-                        if(returnRoomID(mainStat.getFloor(),mainStat.getRoom())/1000==4||returnRoomID(mainStat.getFloor(),mainStat.getRoom())/1000==3){
-//                            mainStat.battleUI.setVisible(true);
-//                            moveUP.setVisible(false);
-//                            moveDOWN.setVisible(false);
-//                            moveLEFT.setVisible(false);
-//                            moveRIGHT.setVisible(false);
-
-                        }else if(returnRoomID(mainStat.getFloor(),mainStat.getRoom())/1000==1||returnRoomID(mainStat.getFloor(),mainStat.getRoom())/1000==3) {
+                        if(returnRoomID(mainStat.getFloor(),mainStat.getRoom())/1000==1) {
                             moveUP.setVisible(false);
                             moveDOWN.setVisible(false);
                             moveLEFT.setVisible(false);
@@ -271,14 +257,7 @@ public class Start extends JFrame {
                         //bgim resize
                         bgimg = new ImageIcon(bgimg.getImage().getScaledInstance(1620, 900, Image.SCALE_SMOOTH));
                         bgPanel.repaint();
-                        if(returnRoomID(mainStat.getFloor(),mainStat.getRoom())/1000==4||returnRoomID(mainStat.getFloor(),mainStat.getRoom())/1000==3){
-//                            mainStat.battleUI.setVisible(true);
-//                            moveUP.setVisible(false);
-//                            moveDOWN.setVisible(false);
-//                            moveLEFT.setVisible(false);
-//                            moveRIGHT.setVisible(false);
-
-                        }else if(returnRoomID(mainStat.getFloor(),mainStat.getRoom())/1000==1||returnRoomID(mainStat.getFloor(),mainStat.getRoom())/1000==3) {
+                        if(returnRoomID(mainStat.getFloor(),mainStat.getRoom())/1000==1) {
                             moveUP.setVisible(false);
                             moveDOWN.setVisible(false);
                             moveLEFT.setVisible(false);
@@ -340,14 +319,7 @@ public class Start extends JFrame {
                         //bgim resize
                         bgimg = new ImageIcon(bgimg.getImage().getScaledInstance(1620, 900, Image.SCALE_SMOOTH));
                         bgPanel.repaint();
-                        if(returnRoomID(mainStat.getFloor(),mainStat.getRoom())/1000==4||returnRoomID(mainStat.getFloor(),mainStat.getRoom())/1000==3){
-//                            mainStat.battleUI.setVisible(true);
-//                            moveUP.setVisible(false);
-//                            moveDOWN.setVisible(false);
-//                            moveLEFT.setVisible(false);
-//                            moveRIGHT.setVisible(false);
-
-                        }else if(returnRoomID(mainStat.getFloor(),mainStat.getRoom())/1000==1||returnRoomID(mainStat.getFloor(),mainStat.getRoom())/1000==3) {
+                       if(returnRoomID(mainStat.getFloor(),mainStat.getRoom())/1000==1) {
                             moveUP.setVisible(false);
                             moveDOWN.setVisible(false);
                             moveLEFT.setVisible(false);

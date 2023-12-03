@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
-  <artifact type="jar" name="Java_Swing:jar">
-    <output-path>$PROJECT_DIR$/out/artifacts/Java_Swing_jar</output-path>
+  <artifact type="jar" name="Java_Swing:jar2">
+    <output-path>$USER_HOME$/Downloads</output-path>
     <root id="archive" name="Java_Swing.jar">
       <element id="module-output" name="Java_Swing" />
       <element id="extracted-dir" path="$PROJECT_DIR$/src/library/json-simple-1.1.1.jar" path-in-jar="/" />

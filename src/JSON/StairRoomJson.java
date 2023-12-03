@@ -23,6 +23,8 @@ public class StairRoomJson {
     public void setInfo(int roomID){
         LoadJSON loadJSON = new LoadJSON();
         JSONObject stairRoom = loadJSON.JsonLoad("src/Resource/json/" + roomID +".json");
+        if(stairRoom == null)
+            stairRoom = loadJSON.JsonLoad("Resource/json/" + roomID +".json");
         RoomID = Integer.parseInt(stairRoom.get("RoomID").toString());
         Background = stairRoom.get("BackGround").toString();
     }

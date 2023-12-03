@@ -176,9 +176,22 @@ public class BackPackUI extends JPanel {
             weaponLabel[i].addMouseListener(new MouseAdapter() {
                 public void mouseEntered(MouseEvent e) {
                     super.mouseEntered(e);
-                    descriptionLabel.setText("");
+                    /*
+                    {
+  "WeaponID" : 11,
+  "WeaponName" : "Punch",
+  "damage" : 2,
+  "accuracy" : 10,
+  "durability" : 10
+}
+                    */
                     if(bp.searchWeapon(i)==0){
-                        descriptionLabel.setText("");
+                        descriptionLabel.setText("Empty");
+                    }else {
+                        descriptionLabel.setText("WeaponName :" + retJson.LoadJsonCollect(bp.searchWeapon(i), "Name") + "\n" +
+                                "Damage :" + retJson.LoadJsonCollect(bp.searchWeapon(i), "Damage") + "\n" +
+                                "Accuracy :" + retJson.LoadJsonCollect(bp.searchWeapon(i), "Accuracy") + "\n" +
+                                "Durability :" + retJson.LoadJsonCollect(bp.searchWeapon(i), "Durability") + "\n");
                     }
                     descriptionLabel.setText(Integer.toString(bp.searchWeapon(i)));
                 }
@@ -210,8 +223,21 @@ public class BackPackUI extends JPanel {
             armorLabel[i].addMouseListener(new MouseAdapter() {
                 public void mouseEntered(MouseEvent e) {
                     super.mouseEntered(e);
-                    descriptionLabel.setText("");
-                    descriptionLabel.setText("armor" + FinalI);
+                    /*
+                    {
+  "ArmorID" : 30,
+  "ArmorName" : "cloth",
+  "defense" : 1,
+  "durability" : 10
+}
+                     */
+                    if(bp.searchArmor(i)==0){
+                        descriptionLabel.setText("Empty");
+                    }else {
+                        descriptionLabel.setText("ArmorName :" + retJson.LoadJsonCollect(bp.searchArmor(i), "Name") + "\n" +
+                                "Defense :" + retJson.LoadJsonCollect(bp.searchArmor(i), "Defense") + "\n" +
+                                "Durability :" + retJson.LoadJsonCollect(bp.searchArmor(i), "Durability") + "\n");
+                    }
                 }
                 public void mouseClicked(MouseEvent e) {
                     super.mouseClicked(e);
@@ -240,8 +266,23 @@ public class BackPackUI extends JPanel {
             foodLabel[i].addMouseListener(new MouseAdapter() {
                 public void mouseEntered(MouseEvent e) {
                     super.mouseEntered(e);
-                    descriptionLabel.setText("");
-                    descriptionLabel.setText("food" + FinalI);
+                    /*
+                    {
+    "FoodID" : 50,
+    "FoodName" : "Apple",
+    "FoodType" : "hungry",
+    "hungry" : 2
+}
+                     */
+                    if(bp.searchFood(i)==0){
+                        descriptionLabel.setText("Empty");
+                    }else {
+                        descriptionLabel.setText("FoodName :" + retJson.LoadJsonCollect(bp.searchFood(i), "Name") + "\n" +
+                                "FoodType :" + retJson.LoadJsonCollect(bp.searchFood(i), "FoodType") + "\n" +
+                                "hungry :" + retJson.LoadJsonCollect(bp.searchFood(i), "hungry") + "\n" +
+                                "heal :" + retJson.LoadJsonCollect(bp.searchFood(i), "heal") + "\n" +
+                                "thirst :" + retJson.LoadJsonCollect(bp.searchFood(i), "thirst") + "\n");
+                    }
                 }
                 public void mouseClicked(MouseEvent e) {
                     super.mouseClicked(e);

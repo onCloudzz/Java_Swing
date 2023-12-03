@@ -29,6 +29,8 @@ public class SZRoomJson {
     public void setInfo(int roomID){
         LoadJSON loadJSON = new LoadJSON();
         JSONObject  SZRoom = loadJSON.JsonLoad("src/Resource/json/" + roomID +".json");
+        if(SZRoom == null)
+            SZRoom = loadJSON.JsonLoad("Resource/json/" + roomID +".json");
         RoomID = Integer.parseInt( SZRoom.get("RoomID").toString());
         Background =  SZRoom.get("BackGround").toString();
         ZombieQuality = Integer.parseInt( SZRoom.get("ZombieQuality").toString());

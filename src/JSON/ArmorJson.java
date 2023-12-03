@@ -34,6 +34,8 @@ public class ArmorJson {
         public void setInfo(int armorID) {
             LoadJSON loadJSON = new LoadJSON();
             org.json.simple.JSONObject armor = loadJSON.JsonLoad("src/Resource/json/" + armorID + ".json");
+            if(armor == null)
+                armor = loadJSON.JsonLoad("Resource/json/" + armorID + ".json");
             this.armorID = Integer.parseInt(armor.get("ArmorID").toString());
             armorName = armor.get("ArmorName").toString();
             defense = Integer.parseInt(armor.get("defense").toString());
