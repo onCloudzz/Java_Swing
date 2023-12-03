@@ -1,0 +1,7 @@
+{
+  "WeaponID" : 13,
+  "WeaponName" : "katana",
+  "damage" : 6,
+  "accuracy" : 9,
+  "durability" : 10
+}

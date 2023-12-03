@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 
 public class WeaponAndInventoryPanel extends JPanel {
+    JButton inventoryButton ;
     public WeaponAndInventoryPanel() {
         setLayout(new FlowLayout(FlowLayout.CENTER));
 
@@ -13,8 +14,8 @@ public class WeaponAndInventoryPanel extends JPanel {
         add(currentWeaponLabel);
 
         // Inventory button
-        JButton inventoryButton = new JButton();
-        ImageIcon backpackIcon = new ImageIcon("assets/backpack.jpeg");
+        inventoryButton = new JButton();
+        ImageIcon backpackIcon = new ImageIcon("src/Resource/images/assets/backpack.jpeg");
         Image backpackImage = backpackIcon.getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH);
         ImageIcon scaledIcon = new ImageIcon(backpackImage);
         inventoryButton.setIcon(scaledIcon);

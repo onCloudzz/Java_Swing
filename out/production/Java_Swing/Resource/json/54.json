@@ -1,0 +1,6 @@
+{
+  "FoodID" : 54,
+  "FoodName" : "Water",
+  "FoodType" : "thirst",
+  "thirst": 5
+}

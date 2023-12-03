@@ -1,0 +1,7 @@
+{
+  "WeaponID" : 16,
+  "WeaponName" : "shotgun",
+  "damage" : 14,
+  "accuracy" : 8,
+  "durability" : 10
+}

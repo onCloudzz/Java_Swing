@@ -1,0 +1,7 @@
+{
+  "WeaponID" : 11,
+  "WeaponName" : "baseball bat",
+  "damage" : 5,
+  "accuracy" : 10,
+  "durability" : 10
+}

@@ -1,0 +1,7 @@
+{
+  "WeaponID" : 15,
+  "WeaponName" : "rifle",
+  "damage" : 14,
+  "accuracy" : 9,
+  "durability" : 10
+}

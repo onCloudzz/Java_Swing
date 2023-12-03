@@ -1,0 +1,6 @@
+{
+  "FoodID" : 56,
+  "FoodName" : "Bandage",
+  "FoodType" : "heal",
+  "heal" : 5
+}

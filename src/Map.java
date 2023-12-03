@@ -63,7 +63,7 @@ public class Map {
     public int[][] setZombieeasy(int[][] Map, int seed){
         Random rand = new Random(seed);
 //        1. 시작 방 생성
-        Map[0][0] = -1;
+        Map[0][0] = 1001;
 
 //        2. 각 층별로 좀비방 1~3개 개수 결정
         int[] zombie = new int[99];
@@ -106,26 +106,38 @@ public class Map {
                 }
             }
         }
-
+        //realzombie 출력
+        for(int i = 0; i< 99; i++){
+            for(int j = 0; j<realzombie[i].length;j++){
+                System.out.print(realzombie[i][j] + " ");
+            }
+            System.out.println();
+        }
         //4-1. realzombie에 저장된 좀비방 위치를 Map에 저장
         for(int i = 0; i< 99; i++){
             for(int j = 0; j<realzombie[i].length;j++) {
                 Map[i+1][realzombie[i][j]] = 3;
                 if(realzombie[i][j] == 1)
-                    Map[i+1][realzombie[i][j]] = 6;
+                    Map[i+1][1] = 6;
             }
         }
-
+        //Map 출력
+        for(int i = 0; i<100;i++){
+            for(int j = 0; j<3;j++){
+                System.out.print(Map[i][j] + " ");
+            }
+            System.out.println();
+        }
         for(int i = 0; i< 100 ; i++){
             for(int j = 0; j<3;j++){
                 if(Map[i][j]==0){
                     Map[i][j] = 1000 + rand.nextInt(100);
-                }
-                if(j == 1){
-                    Map[i][j] = 2000 + rand.nextInt(100);
-                    if(Map[i][j]==6){
-                        Map[i][j] = 3000 + rand.nextInt(100);
+                    if(j == 1){
+                        Map[i][j] = 2000 + rand.nextInt(100);
                     }
+                }
+                if(Map[i][j]==6){
+                    Map[i][j] = 3000 + rand.nextInt(100);
                 }
                 if(Map[i][j]==3){
                     Map[i][j] = 4000 + rand.nextInt(100);
@@ -247,6 +259,10 @@ public class Map {
 
     public int[][] getMap(){
         return this.Map;
+    }
+    public int[][] MapEdit(int indexx, int indexy, int num){
+        Map[indexx][indexy] = num;
+        return Map;
     }
 
 }

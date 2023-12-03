@@ -1,0 +1,7 @@
+{
+  "WeaponID" : 14,
+  "WeaponName" : "pistol",
+  "damage" : 11,
+  "accuracy" : 9,
+  "durability" : 10
+}

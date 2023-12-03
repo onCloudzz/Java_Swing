@@ -1,6 +1,5 @@
 package JSON;
 
-import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
 public class ItemRoomJson {
@@ -16,7 +15,7 @@ public class ItemRoomJson {
      */
     int RoomID;
     String Background;
-    boolean Event;
+    int Event;
     int ItemsCount;
     public int getRoomID() {
         return RoomID;
@@ -24,7 +23,7 @@ public class ItemRoomJson {
     public String getBackground() {
         return Background;
     }
-    public boolean getEvent() {
+    public int getEvent() {
         return Event;
     }
     public int getItemsCount() {
@@ -33,10 +32,10 @@ public class ItemRoomJson {
 
     public void setInfo(int roomID){
         LoadJSON loadJSON = new LoadJSON();
-        JSONObject itemRoom = loadJSON.JsonLoad("Resource/JSON/" + roomID +".json");
+        JSONObject itemRoom = loadJSON.JsonLoad("src/Resource/json/" + roomID +".json");
         RoomID = Integer.parseInt(itemRoom.get("RoomID").toString());
-        Background = itemRoom.get("Background").toString();
-        Event = Boolean.parseBoolean(itemRoom.get("Event").toString());
+        Background = itemRoom.get("BackGround").toString();
+        Event = Integer.parseInt(itemRoom.get("Event").toString());
         ItemsCount = Integer.parseInt(itemRoom.get("ItemsCount").toString());
     }
 

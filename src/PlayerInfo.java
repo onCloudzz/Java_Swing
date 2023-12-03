@@ -20,5 +20,99 @@ public class PlayerInfo {
     private int Weapon;
     //플레이어 현재 갑옷
     private int Armor;
-    //플레이어
+
+    public int getHP(){
+        return HP;
+    }
+    public int getATK(){
+        return ATK;
+    }
+    public int getDEF(){
+        return DEF;
+    }
+    public int getHunger(){
+        return Hunger;
+    }
+    public int getThirst(){
+        return Thirst;
+    }
+    public int getFloor(){
+        return Floor;
+    }
+    public int getRoom(){
+        return Room;
+    }
+    public int getWeapon(){
+        return Weapon;
+    }
+    public int getArmor(){
+        return Armor;
+    }
+    public void setHP(int HP){
+        this.HP = HP;
+    }
+    public void setATK(int ATK){
+        this.ATK = ATK;
+    }
+
+    public void setDEF(int DEF){
+        this.DEF = DEF;
+    }
+    public void setHunger(int Hunger){
+        this.Hunger = Hunger;
+    }
+    public void setThirst(int Thirst){
+        this.Thirst = Thirst;
+    }
+    public void setFloor(int Floor){
+        this.Floor = Floor;
+    }
+    public void setRoom(int Room){
+        this.Room = Room;
+    }
+    public void setWeapon(int Weapon){
+        this.Weapon = Weapon;
+    }
+    public void setArmor(int Armor){
+        this.Armor = Armor;
+    }
+
+    public void addHP(int HP){
+        this.HP += HP;
+    }
+    public void addATK(int ATK){
+        this.ATK += ATK;
+    }
+    public void addDEF(int DEF){
+        this.DEF += DEF;
+    }
+    public void addHunger(int Hunger){
+        this.Hunger += Hunger;
+    }
+    public void addThirst(int Thirst){
+        this.Thirst += Thirst;
+    }
+    public void addFloor(int Floor){
+        this.Floor += Floor;
+    }
+    public void addRoom(int Room){
+        this.Room += Room;
+    }
+    public void addWeapon(int Weapon){
+        this.Weapon += Weapon;
+    }
+    public void addArmor(int Armor){
+        this.Armor += Armor;
+    }
+
+    public void dataSet(){
+        HP = 100;
+        Hunger = 100;
+        Thirst = 100;
+        Floor = 0;
+        Room = 0;
+        Weapon = 0;
+        Armor = 0;
+    }
+
 }

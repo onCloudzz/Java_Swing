@@ -1,0 +1,72 @@
+{
+
+
+  "armor" : {
+    "cloth" : {
+      "ArmorID" : 20,
+        "ArmorName" : "cloth",
+      "defense" : 1,
+      "durability" : 10
+    },
+    "Bulletproof" : {
+      "ArmorID" : 21,
+        "ArmorName" : "Bulletproof",
+      "defense" : 10,
+      "durability" : 10
+    },
+    "firesuit" : {
+      "ArmorID" : 22,
+      "ArmorName" : "Firesuit",
+      "defense" : 5,
+      "durability" : 10
+    }
+  },
+
+  "eat" : {
+    "apple" : {
+      "FoodID" : 30,
+      "FoodName" : "Apple",
+      "hungry" : 2
+    },
+    "hotdog" : {
+      "FoodID" : 31,
+      "FoodName" : "Hotdog",
+      "hungry" : 3
+    },
+    "canfood" : {
+      "FoodID" : 32,
+      "FoodName" : "Canfood",
+      "hungry" : 4
+    },
+    "steak" : {
+      "FoodID" : 33,
+      "FoodName" : "Steak",
+      "hungry" : 5
+    },
+    "bandage" : {
+      "FoodID" : 34,
+      "FoodName" : "Bandage",
+      "heal" : 5
+    },
+    "painkiller" : {
+      "FoodID" : 35,
+      "FoodName" : "Painkiller",
+      "heal" : 6
+    },
+    "aidkit" : {
+      "FoodID" : 36,
+      "FoodName" : "Aidkit",
+      "heal" : 10
+    },
+    "water" : {
+      "FoodID" : 37,
+      "FoodName" : "Water",
+      "thirst" : 5
+    },
+    "hotseven" : {
+      "FoodID" : 38,
+      "FoodName" : "Hotseven",
+      "thirst" : 7
+    }
+  }
+}

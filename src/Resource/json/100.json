@@ -1,0 +1,10 @@
+{
+  "ZombieID" : 100,
+  "ZombieName" : "Zombie1",
+  "ZombieImg" : "zombie1.png",
+  "ZombieType" : 0,
+  "ZombieHP" : 30,
+  "ZombieAttack" : 5,
+  "ZombieDefense" : 0,
+  "Zombieaccuracy" : 7
+}

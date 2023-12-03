@@ -28,12 +28,12 @@ public class SZRoomJson {
 
     public void setInfo(int roomID){
         LoadJSON loadJSON = new LoadJSON();
-        JSONObject  SZRoom = loadJSON.JsonLoad("Resource/JSON/" + roomID +".json");
+        JSONObject  SZRoom = loadJSON.JsonLoad("src/Resource/json/" + roomID +".json");
         RoomID = Integer.parseInt( SZRoom.get("RoomID").toString());
-        Background =  SZRoom.get("Background").toString();
+        Background =  SZRoom.get("BackGround").toString();
         ZombieQuality = Integer.parseInt( SZRoom.get("ZombieQuality").toString());
         ZombieCount = Integer.parseInt( SZRoom.get("ZombieCount").toString());
         Event = Integer.parseInt( SZRoom.get("Event").toString());
-        ItemCount = Integer.parseInt(SZRoom.get("ItemCount").toString());
+        ItemCount = Integer.parseInt(SZRoom.get("ItemsCount").toString());
     }
 }

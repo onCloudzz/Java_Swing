@@ -39,12 +39,12 @@ public class ZombieRoomJson {
 
     public void setInfo(int roomID){
         LoadJSON loadJSON = new LoadJSON();
-        JSONObject zombieRoom = loadJSON.JsonLoad("Resource/JSON/" + roomID +".json");
+        JSONObject zombieRoom = loadJSON.JsonLoad("src/Resource/json/" + roomID +".json");
         RoomID = Integer.parseInt(zombieRoom.get("RoomID").toString());
-        Background = zombieRoom.get("Background").toString();
+        Background = zombieRoom.get("BackGround").toString();
         ZombieQuality = Integer.parseInt(zombieRoom.get("ZombieQuality").toString());
         ZombieCount = Integer.parseInt(zombieRoom.get("ZombieCount").toString());
         Event = Integer.parseInt(zombieRoom.get("Event").toString());
-        ItemCount = Integer.parseInt(zombieRoom.get("ItemCount").toString());
+        ItemCount = Integer.parseInt(zombieRoom.get("ItemsCount").toString());
     }
 }

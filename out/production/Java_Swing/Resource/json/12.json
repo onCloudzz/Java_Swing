@@ -1,0 +1,7 @@
+{
+  "WeaponID" : 12,
+  "WeaponName" : "ax",
+  "damage" : 8,
+  "accuracy" : 7,
+  "durability" : 10
+}

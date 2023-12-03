@@ -5,7 +5,7 @@ import javax.swing.border.LineBorder;
 
 public class CharacterPanel extends JPanel {
     public CharacterPanel() {
-        ImageIcon characterIcon = new ImageIcon("assets/char2.jpeg");
+        ImageIcon characterIcon = new ImageIcon("src/Resource/images/assets/char2.jpeg");
         Image characterImage = characterIcon.getImage().getScaledInstance(150, 150, Image.SCALE_SMOOTH);
         ImageIcon scaledCharacterIcon = new ImageIcon(characterImage);
 
